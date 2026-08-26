@@ -21,6 +21,7 @@ DCs are actually run) inside VirtualBox, on an isolated internal network(To Avoi
 graphical tools.
 
 ![Static IP configuration](ipconfig.png)
+![Static IP configuration](SConfig.png).
 
 2. Active Directory Domain Services
 Promoted the server to a domain controller, standing up a new forest (`lab.local`) using:
@@ -41,8 +42,8 @@ New-ADOrganizationalUnit -Name "Sales" -Path "DC=lab,DC=local"
 New-ADOrganizationalUnit -Name "HR" -Path "DC=lab,DC=local"
 New-ADOrganizationalUnit -Name "Engineering" -Path "DC=lab,DC=local"
 
-![OU structure](AD Organizational Unit 1.png)
-![OU structure](AD Organizational Unit 2.png)
+![OU structure](ADOrganizationalUnit1.png)
+![OU structure](ADOrganizationalUnit2.png)
 
 4. Automated Bulk User Provisioning
 
@@ -50,6 +51,9 @@ New-ADOrganizationalUnit -Name "Engineering" -Path "DC=lab,DC=local"
 Wrote a PowerShell script (`Import-Employees.ps1`) that reads a CSV of new hires
 (simulating an HR export) and automatically creates their AD accounts in the correct
 department OU, with forced password change at first login — a standard security practice.
+
+![Script output](ADUsers.png)
+![User verification](ADUsers2.png)
 
 **How it works:**
 - Reads each row of `employees.csv`
