@@ -29,7 +29,7 @@ powershell commands
 " Install-ADDSForest -DomainName "lab.local"
 
 
-![Domain verification](AD Domains.png)
+![Domain verification](ADDomains.png)
 
 3. Organizational Unit Structure
    
